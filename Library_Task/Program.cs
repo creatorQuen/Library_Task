@@ -6,7 +6,7 @@ namespace Library_Task
     {
         static void Main(string[] args)
         {
-            
+
         }
     }
 }

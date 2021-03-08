@@ -211,6 +211,34 @@ namespace Library_Task
             return a + b;
         }
 
+        public static int FindThirdRoot(int a)
+        {
+            /// <summary>
+            /// Пользователь вводит целое положительное число, которое является кубом целого числа N. 
+            /// Найдите число N методом половинного деления.
+            /// </summary>
+            
+            
+            int left = 0;
+            int right = a;
+            int middle = (right + left) / 2;
+            int y = middle * middle * middle;
+
+            while (a != y)
+            {
+                if (y > a)
+                {
+                    right = middle;
+                }
+                else
+                {
+                    left = middle;
+                }
+                middle = (right + left) / 2;
+            }
+
+            return middle;
+        }
 
 
 
