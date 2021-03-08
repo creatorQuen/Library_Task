@@ -40,7 +40,20 @@ namespace Library_Task
             return maximum;
         }
 
+        public static int GetIndexOfMinimumNumberInArray(int[] array)
+        {
+            int numberIndex = 0;
 
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] < array[numberIndex])
+                {
+                    numberIndex = i;
+                }
+            }
+
+            return numberIndex;
+        }
 
     }
 }
