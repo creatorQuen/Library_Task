@@ -313,7 +313,59 @@ namespace Library_Task
 
         }
 
-        
+        public static string IsSameDigit(int a, int b)
+        {
+            /// <summary>
+            /// Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры.
+            /// Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
+            /// </summary>
+
+            int digitA, tempB;
+            bool FLAG = false;
+
+            if ((a != 0) && (b != 0))
+            {
+                while ((a / 10 > 0) || (a % 10 != 0))
+                {
+                    digitA = a % 10;
+                    tempB = b;
+                    while ((tempB / 10 > 0) || (tempB % 10 != 0))
+                    {
+                        if (tempB % 10 == digitA)
+                        {
+                            FLAG = true;
+                            return "ДА";
+                            break;
+                        }
+                        tempB /= 10;
+                    }
+                    if (FLAG) break;
+                    a /= 10;
+                }
+                if (!FLAG) return "НЕТ";
+            }
+            else if (a != b)
+            {
+                tempB = a + b;
+                while ((tempB / 10 > 0) || (tempB % 10 != 0))
+                {
+                    if (tempB % 10 == 0)
+                    {
+                        FLAG = true;
+                        return "ДА";
+                        break;
+                    }
+                    tempB /= 10;
+                }
+                if (!FLAG) return "НЕТ";
+            }
+            else
+            {
+                return "ДА";
+            }
+
+        }
+    }
 
 
     }
