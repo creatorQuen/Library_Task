@@ -259,5 +259,25 @@ namespace Library_Task
             return count;
         }
 
+        public static string GetReverseNumber(int a)
+        {
+            /// <summary>
+            /// Пользователь вводит 1 число. Найти число, которое является зеркальным отображением 
+            /// последовательности цифр заданного числа, например, задано число 123, вывести 321.
+            /// </summary>
+
+            string newAns = "";
+
+            for (int i = a.ToString().Length - 1; i >= 0; i--)
+            {
+                newAns += a.ToString()[i];
+            }
+            
+            return newAns;
+        }
+
+
+
+
     }
 }
