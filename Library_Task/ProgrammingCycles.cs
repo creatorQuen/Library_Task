@@ -240,7 +240,24 @@ namespace Library_Task
             return middle;
         }
 
+        public static int FindOddDigitsOfNumber(int a)
+        {
+            /// <summary>
+            /// Пользователь вводит 1 число. Найти количество нечетных цифр этого числа.
+            /// </summary>
 
+            int count = 0;
+            for (int i = 0; i < a.ToString().Length; i++)
+            {
+                char number = a.ToString()[i];
+                if ((int)Char.GetNumericValue(number) % 2 != 0)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
 
     }
 }
