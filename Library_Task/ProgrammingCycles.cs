@@ -170,7 +170,7 @@ namespace Library_Task
         public static int GetNumberFibonacci(int a)
         {
             /// <summary>
-            /// 6.	Пользователь вводит 1 число (N). Выведите N-ое число ряда фибоначчи. 
+            /// Пользователь вводит 1 число (N). Выведите N-ое число ряда фибоначчи. 
             /// В ряду фибоначчи каждое следующее число является суммой двух предыдущих. 
             /// Первое и второе считаются равными 1.
             /// </summary>
@@ -188,6 +188,23 @@ namespace Library_Task
             }
 
             return fibon2;
+        }
+
+        public static int FindGreatestCommonDivisor(int a, int b)
+        {
+            /// <summary>
+            /// Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
+            /// </summary>
+
+            while (a != b)
+            {
+                if (a > b)
+                {
+                    a = a - b;
+                }
+            }
+
+            return a;
         }
 
     }
