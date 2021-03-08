@@ -25,6 +25,21 @@ namespace Library_Task
             return minimum;
         }
 
+        public static int GetMaximumNumberInArray(int[] array)
+        {
+            int maximum = array[0];
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] > maximum)
+                {
+                    maximum = array[i];
+                }
+            }
+
+            return maximum;
+        }
+
 
 
     }
