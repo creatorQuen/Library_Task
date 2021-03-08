@@ -196,16 +196,23 @@ namespace Library_Task
             /// Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
             /// </summary>
 
-            while (a != b)
+            while ((a != 0) && (b != 0))
             {
                 if (a > b)
                 {
-                    a = a - b;
+                    a = a % b;
+                }
+                else
+                {
+                    b = b % a;
                 }
             }
 
-            return a;
+            return a + b;
         }
+
+
+
 
     }
 }
