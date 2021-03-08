@@ -8,6 +8,10 @@ namespace Library_Task
     {
         public static double RaisePower(int a, int b)
         {
+            /// <summary>
+            /// Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
+            /// </summary>
+
             double res = 1;
 
             if (a == 0 && b == 0)
@@ -34,6 +38,9 @@ namespace Library_Task
 
         public static int[] GetNumberOfDivision(int a)
         {
+            /// <summary>
+            /// Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
+            /// </summary>
 
             if (a > 0 && a <= 1000)
             {
@@ -56,6 +63,11 @@ namespace Library_Task
 
         public static int GetNumberOfPositiveIntegersWhoseSquareIsLess(int a)
         {
+            /// <summary>
+            /// Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, 
+            /// квадрат которых меньше A.
+            /// </summary>
+
             int i = 0;
 
             for (i = 1; i * i < a; i++)
@@ -75,6 +87,10 @@ namespace Library_Task
 
         public static int GreatestСommonDivisor(int a)
         {
+
+            /// <summary>
+            /// Пользователь вводит 1 число (A). Вывести наибольший делитель (кроме самого A) числа A.
+            /// </summary>
 
             if (a > 0)
             {
@@ -106,6 +122,11 @@ namespace Library_Task
 
         public static int SumOfDivisionOnSeven(int a, int b)
         {
+            /// <summary>
+            /// Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, 
+            /// которые делятся без остатка на 7 (Учтите, что при вводе B может оказаться меньше A).
+            /// </summary>
+
             int sum = 0;
 
             if (a < b)
@@ -146,7 +167,28 @@ namespace Library_Task
             }
         }
 
-        
+        public static int GetNumberFibonacci(int a)
+        {
+            /// <summary>
+            /// 6.	Пользователь вводит 1 число (N). Выведите N-ое число ряда фибоначчи. 
+            /// В ряду фибоначчи каждое следующее число является суммой двух предыдущих. 
+            /// Первое и второе считаются равными 1.
+            /// </summary>
+
+            int fibon1 = 1;
+            int fibon2 = 1;
+            int i = 2;
+
+            while (i < a)
+            {
+                var sumF = fibon1 + fibon2;
+                fibon1 = fibon2;
+                fibon2 = sumF;
+                i = i + 1;
+            }
+
+            return fibon2;
+        }
 
     }
 }
