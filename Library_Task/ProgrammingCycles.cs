@@ -276,7 +276,44 @@ namespace Library_Task
             return newAns;
         }
 
+        public static string SumOfEvenDigitsIsGreaterThanSumOfOdd(int a)
+        {
+            /// <summary>
+            /// Пользователь вводит целое положительное  число (N).
+            /// Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
+            /// </summary>
 
+            string currentNum;
+            int sum;
+
+
+            for (int i = 1; i <= a; i++)
+            {
+                currentNum = Convert.ToString(i);
+                sum = 0;
+                for (int j = 0; j < currentNum.Length; j++)
+                {
+                    if ((int)(Char.GetNumericValue(currentNum[j])) % 2 == 0)
+                    {
+                        sum += (int)(Char.GetNumericValue(currentNum[j]));
+                    }
+                    else
+                    {
+                        sum -= (int)(Char.GetNumericValue(currentNum[j]));
+                    }
+                }
+                if (sum > 0)
+                {
+                    Console.Write(i + " ");
+                  
+                }
+            }
+
+
+
+        }
+
+        
 
 
     }
