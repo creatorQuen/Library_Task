@@ -47,7 +47,7 @@ namespace Library_Task.Tests
 
         [TestCase(0, 0, 0, new double[] {0})]
         [TestCase(4, -20, 25, new double[] {2.5})]
-        [TestCase(-1, -2, 15, new double[] {-5d, 3d})]
+        [TestCase(-1, -2, 15, new double[] {-5, 3})]
         public void SolveQuadraticEquationTests(double a, double b, double c, double[] expected)
         {
             double[] actual = Conditions.SolveQuadraticEquation(a, b, c);
