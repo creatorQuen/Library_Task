@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Library_Task
 {
-    class Variables
+    public static class Variables
     {
-        public static double SolveEquation(double firstNumber, double secondNumber)
+        public static double SolveEquation(int firstNumber, int secondNumber)
         {
             if (firstNumber == secondNumber)
             {

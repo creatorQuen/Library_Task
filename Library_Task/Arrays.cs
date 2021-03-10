@@ -179,14 +179,14 @@ namespace Library_Task
             return arrayTmp;
         }
 
-        public static int[] SortArrayBubble(int[] arr)
-        {
-            /// <summary>
-            /// Отсортировать массив по возрастанию одним из способов:  
-            /// пузырьком(Bubble), выбором (Select) или вставками (Insert)
-            /// </summary>
+        //public static int[] SortArrayBubble(int[] arr)
+        //{
+        //    /// <summary>
+        //    /// Отсортировать массив по возрастанию одним из способов:  
+        //    /// пузырьком(Bubble), выбором (Select) или вставками (Insert)
+        //    /// </summary>
 
 
-        }
+        //}
     }
 }

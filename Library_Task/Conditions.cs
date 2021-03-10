@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Library_Task
 {
-    class Conditions
+    public static class Conditions
     {
         public static double SolveAddMultiplySubtruct(int a, int b)
         {
