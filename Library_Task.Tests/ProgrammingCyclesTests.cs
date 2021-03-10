@@ -31,5 +31,15 @@ namespace Library_Task.Tests
         }
 
 
+        [TestCase(40, 6)]
+        [TestCase(90, 9)]
+        [TestCase(40, 6)]
+        public void GetNumberOfPositiveIntegersWhoseSquareIsLessTests(int a, int expected)
+        {
+            int actual = ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(a);
+
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }

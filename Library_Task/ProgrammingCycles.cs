@@ -69,18 +69,31 @@ namespace Library_Task
         public static int GetNumberOfPositiveIntegersWhoseSquareIsLess(int a)
         {
             /// <summary>
-            /// Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, 
-            /// квадрат которых меньше A.
+            /// Пользователь вводит 1 число (A). Найдите количество положительных целых чисел, квадрат которых меньше A.
             /// </summary>
+
 
             int i = 0;
 
-            for (i = 1; i * i < a; i++)
+            if (a == 0)
             {
+                throw new Exception("Число не должно быть равно нулю.");
+            }
+            else if( a > 0)
+            {
+                for (i = 1; i * i < a; i++)
+                {
 
+                }
+
+                return i - 1;
+            }
+            else
+            {
+                throw new Exception("Число не должно быть отрицательным.");
             }
 
-            return i - 1;
+
 
             //int a = 1;
 
