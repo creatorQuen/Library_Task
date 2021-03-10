@@ -80,8 +80,6 @@ namespace Library_Task.Tests
         }
 
 
-        [TestCase(0,0,0)]
-        public void 
 
 
     }

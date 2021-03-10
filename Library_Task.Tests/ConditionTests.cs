@@ -56,7 +56,18 @@ namespace Library_Task.Tests
         }
 
 
+        [TestCase(20, "двадцать")]
+        [TestCase(10, "десять")]
+        [TestCase(33, "тридцать три")]
+        [TestCase(99, "девяносто девять")]
+        [TestCase(100, "Число не двузначное")]
+        [TestCase(-1, "Число не двузначное")]
+        public void GetUpperCaseTwoDigitNumber(int number, string expected)
+        {
+            string actual = Conditions.GetUpperCaseTwoDigitNumber(number);
 
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }
