@@ -45,7 +45,7 @@ namespace Library_Task.Tests
         [TestCase(10, 4, new int[] { 2, 2 })]
         [TestCase(10, 3, new int[] { 3, 1 })]
         [TestCase(3, 10, new int[] { 0, 3 })]
-        public static void SolveDivisionAndShowRemainderTests(int firstNumber, int secondNumber, int[] expected)
+        public void SolveDivisionAndShowRemainderTests(int firstNumber, int secondNumber, int[] expected)
         {
             int[] actual = Variables.SolveDivisionAndShowRemainder(firstNumber, secondNumber);
 
@@ -59,7 +59,7 @@ namespace Library_Task.Tests
         [TestCase(2, 2, 24, 11)]
         [TestCase(-2, -15, 35, -25)]
         [TestCase(3, 2, 24, 7.3d)]
-        public static void GetLinearEquationTests(double firstNubver, double secondNumber, double thirdNumber, double expected)
+        public void GetLinearEquationTests(double firstNubver, double secondNumber, double thirdNumber, double expected)
         {
             double actual = Variables.GetLinearEquation(firstNubver, secondNumber, thirdNumber);
 
@@ -72,13 +72,12 @@ namespace Library_Task.Tests
         [TestCase(6, 5, 1, 4, "Y=0,2x + (3,8)")]
         [TestCase(-1, 2, 1,  0, "Y=-1x + (1)")]
         [TestCase(-1, 2, 1, -4, "Y=-3x + (-1)")]
-        public static void ShowLinearEquationTests(double a, double b, double c, double d, string expected)
+        public void ShowLinearEquationTests(double a, double b, double c, double d, string expected)
         {
             string actual = Variables.ShowLinearEquation(a, b, c, d);
 
             Assert.AreEqual(expected, actual);
         }
-
 
 
 
