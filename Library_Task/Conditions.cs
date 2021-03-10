@@ -139,8 +139,8 @@ namespace Library_Task
                 double x1 = (-b + Math.Pow(D, 0.5d)) / (2 * a);
                 double x2 = (-b - Math.Pow(D, 0.5d)) / (2 * a);
 
-                arrayOne[0] = x1;
-                arrayOne[1] = x2;
+                arrayTwo[0] = x1;
+                arrayTwo[1] = x2;
 
                 return arrayTwo;
             }

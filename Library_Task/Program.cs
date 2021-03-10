@@ -6,7 +6,7 @@ namespace Library_Task
     {
         static void Main(string[] args)
         {
-            var arr = Conditions.SolveQuadraticEquation(4, -20, 25);
+            var arr = Conditions.SolveQuadraticEquation(-1, -2, 15);
 
             //Console.WriteLine(Conditions.SolveQuadraticEquation(4, -20, 25));
 
