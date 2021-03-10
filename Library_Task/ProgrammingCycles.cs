@@ -46,10 +46,15 @@ namespace Library_Task
             {
                 int size = 1000 / a;
                 int[] arr = new int[size];
+                int j = 0;
 
-                for (int i = a; i <= 1000; i += a)
+                for (int i = 1; i <= 1000; i++)
                 {
-                    arr[i] = a;
+                    if(i % a == 0)
+                    {
+                        arr[j] = i;
+                        j++;
+                    }
                 }
 
                 return arr;
@@ -57,7 +62,7 @@ namespace Library_Task
             }
             else
             {
-                throw new Exception("Число больше 1000");
+                throw new Exception("Число больше 1000 либо меньше 1.");
             }
         }
 
