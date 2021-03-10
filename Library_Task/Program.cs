@@ -6,7 +6,14 @@ namespace Library_Task
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Conditions.GetUpperCaseTwoDigitNumber(101));
+            var arr = Conditions.SolveQuadraticEquation(4, -20, 25);
+
+            //Console.WriteLine(Conditions.SolveQuadraticEquation(4, -20, 25));
+
+            for(int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
             
         }
     }

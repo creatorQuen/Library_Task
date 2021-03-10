@@ -22,7 +22,7 @@ namespace Library_Task
             }
         }
 
-        public static int QuarterPoint(double x, double y)
+        public static int GetQuarterPointArea(double x, double y)
         {
             int ans = 0;
 
@@ -111,8 +111,13 @@ namespace Library_Task
             return numbers;
         }
 
-        public static double[] SolveQuadraticEquation(int a, int b, int c)
+        public static double[] SolveQuadraticEquation(double a, double b, double c)
         {
+            if(a == 0)
+            {
+                throw new Exception("Коэффициент a не может быть равен нулю.");
+            }
+
             double D = Math.Pow(b, 2) - 4 * a * c;
             double[] arrayOne = new double[1];
             double[] arrayTwo = new double[2];
