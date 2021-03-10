@@ -56,19 +56,19 @@ namespace Library_Task
             return result;
         }
 
-        public static double GetLinearEquation(double firstNubver, double secondNumber, double thirdNumber)
+        public static double GetLinearEquation(double firstNumber, double secondNumber, double thirdNumber)
         {
-            if (firstNubver == 0)
+            if (firstNumber == 0)
             {
                 throw new Exception("Первый коэфициент (А) линейного уравнения не должно быть 0.");
             }
 
-            double result = (thirdNumber - secondNumber) / firstNubver;
+            double result = (thirdNumber - secondNumber) / firstNumber;
 
             return result;
         }
 
-        public static string PlacePoint(double a, double b, double c, double d)
+        public static string ShowLinearEquation(double a, double b, double c, double d)
         {
             if (a == c)
             {
@@ -78,7 +78,7 @@ namespace Library_Task
             var k = (b - d) / (a - c);
             var s = d - k * c;
 
-            return $"Y={k}x + {s}";
+            return $"Y={k}x + ({s})";
 
         }
 

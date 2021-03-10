@@ -6,7 +6,8 @@ namespace Library_Task
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine(3.8);
+            
         }
     }
 }
