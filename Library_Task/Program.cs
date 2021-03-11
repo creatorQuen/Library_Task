@@ -6,9 +6,9 @@ namespace Library_Task
     {
         static void Main(string[] args)
         {
-            var arr = ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(-40);
+            //var arr = ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(-40);
 
-            Console.WriteLine(arr);
+            //Console.WriteLine(arr);
 
             //for(int i = 0; i < arr.Length; i++)
             //{

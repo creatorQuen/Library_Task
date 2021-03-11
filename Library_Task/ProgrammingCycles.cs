@@ -50,7 +50,7 @@ namespace Library_Task
 
                 for (int i = 1; i <= 1000; i++)
                 {
-                    if(i % a == 0)
+                    if (i % a == 0)
                     {
                         arr[j] = i;
                         j++;
@@ -79,7 +79,7 @@ namespace Library_Task
             {
                 throw new Exception("Число не должно быть равно нулю.");
             }
-            else if( a > 0)
+            else if (a > 0)
             {
                 for (i = 1; i * i < a; i++)
                 {
@@ -122,7 +122,7 @@ namespace Library_Task
             }
             else if (a < 0)
             {
-                for (int i = a + 1; i > 0; i++)
+                for (int i = a + 1; i < 0; i++)
                 {
                     if (a % i == 0)
                     {
@@ -130,12 +130,16 @@ namespace Library_Task
                     }
                 }
             }
+            else if (a == 1)
+            {
+                throw new Exception("Число не должно быть 1");
+            }
             else
             {
                 throw new Exception("Число не должно быть 0");
             }
 
-            return 0;
+            return 1;
         }
 
         public static int SumOfDivisionOnSeven(int a, int b)
@@ -197,6 +201,11 @@ namespace Library_Task
             int fibon2 = 1;
             int i = 2;
 
+            if (a < 1)
+            {
+                throw new Exception("Число не может быть меньше единицы.");
+            }
+
             while (i < a)
             {
                 var sumF = fibon1 + fibon2;
@@ -214,19 +223,42 @@ namespace Library_Task
             /// Пользователь вводит 2 числа. Найти их наибольший общий делитель используя алгоритм Евклида.
             /// </summary>
 
-            while ((a != 0) && (b != 0))
+            if ((a == 0)|| (b == 0))
             {
-                if (a > b)
-                {
-                    a = a % b;
-                }
-                else
-                {
-                    b = b % a;
-                }
+                throw new Exception("Числа не должны быть равны нулю.");
             }
 
-            return a + b;
+
+            if (a > b)
+            {
+                int temp = a;
+
+                a = b;
+                b = temp;
+            }
+
+
+            if ( a % b != 0)
+            {
+                while ((a != 0) && (b != 0))
+                {
+                    if (a > b)
+                    {
+                        a = a % b;
+                    }
+                    else
+                    {
+                        b = b % a;
+                    }
+                }
+
+                return a + b;
+            }
+            else
+            {
+                return b;
+            }
+
         }
 
         public static int FindThirdRoot(int a)
