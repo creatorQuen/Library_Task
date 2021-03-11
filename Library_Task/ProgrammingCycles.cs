@@ -268,15 +268,20 @@ namespace Library_Task
             /// Найдите число N методом половинного деления.
             /// </summary>
             
-            
+            if (a < 1)
+            {
+                throw new Exception("Число должно быть положительным.");
+            }
+
+
             int left = 0;
             int right = a;
             int middle = (right + left) / 2;
             int y = middle * middle * middle;
 
-            while (a != y)
+            while (y != a)
             {
-                if (y > a)
+                if (middle * middle * middle > a)
                 {
                     right = middle;
                 }
@@ -285,6 +290,7 @@ namespace Library_Task
                     left = middle;
                 }
                 middle = (right + left) / 2;
+                y = middle * middle * middle;
             }
 
             return middle;

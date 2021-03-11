@@ -88,7 +88,7 @@ namespace Library_Task.Tests
         [TestCase(100, 6, 2)]
         [TestCase(-100, -25, -25)]
         [TestCase(0, 0, 0)]
-        public void FindGreatestCommonDivisor(int a, int b, int expected)
+        public void FindGreatestCommonDivisorTests(int a, int b, int expected)
         {
             int actual = ProgrammingCycles.FindGreatestCommonDivisor(a, b);
 
@@ -96,8 +96,15 @@ namespace Library_Task.Tests
         }
 
 
+        [TestCase(27, 3)]
+        [TestCase(8, 2)]
+        [TestCase(-125, -5)] // "Число должно быть положительным."
+        public void FindThirdRootTests(int a, int expected)
+        {
+            int actual = ProgrammingCycles.FindThirdRoot(a);
 
-
+            Assert.AreEqual(expected, actual);
+        }
 
 
 

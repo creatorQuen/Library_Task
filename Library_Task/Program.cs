@@ -8,7 +8,9 @@ namespace Library_Task
         {
             //var arr = ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(-40);
 
-            //Console.WriteLine(arr);
+            var arr = ProgrammingCycles.FindThirdRoot(27);
+
+            Console.WriteLine(arr);
 
             //for(int i = 0; i < arr.Length; i++)
             //{
