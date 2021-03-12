@@ -303,16 +303,37 @@ namespace Library_Task
             /// </summary>
 
             int count = 0;
-            for (int i = 0; i < a.ToString().Length; i++)
+
+            if (a < 0)
             {
-                char number = a.ToString()[i];
-                if ((int)Char.GetNumericValue(number) % 2 != 0)
+                a = Math.Abs(a);
+
+                for (int i = 0; i < a.ToString().Length; i++)
                 {
-                    count++;
+                    char number = a.ToString()[i];
+                    if ((int)Char.GetNumericValue(number) % 2 != 0)
+                    {
+                        count++;
+                    }
                 }
+
+                return count;
+            }
+            else
+            {
+                for (int i = 0; i < a.ToString().Length; i++)
+                {
+                    char number = a.ToString()[i];
+                    if ((int)Char.GetNumericValue(number) % 2 != 0)
+                    {
+                        count++;
+                    }
+                }
+
+                return count;
             }
 
-            return count;
+
         }
 
         public static string GetReverseNumber(int a)
@@ -332,97 +353,87 @@ namespace Library_Task
             return newAns;
         }
 
-        //public static string SumOfEvenDigitsIsGreaterThanSumOfOdd(int a)
-        //{
-        //    /// <summary>
-        //    /// Пользователь вводит целое положительное  число (N).
-        //    /// Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
-        //    /// </summary>
+        public static string SumOfEvenDigitsIsGreaterThanSumOfOdd(int a)
+        {
+            /// <summary>
+            /// Пользователь вводит целое положительное  число (N).
+            /// Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
+            /// </summary>
 
-        //    string currentNum;
-        //    int sum;
+            if(a <= 0)
+            {
+                throw new Exception("Число должно быть целым, положительным и больше нуля");
+            }
+
+            string currentNum;
+            int sum;
+            string d = "";
+
+            for (int i = 1; i <= a; i++)
+            {
+                currentNum = Convert.ToString(i);
+                sum = 0;
+
+                for (int j = 0; j < currentNum.Length; j++)
+                {
+                    if ((int)(Char.GetNumericValue(currentNum[j])) % 2 == 0)
+                    {
+                        sum += (int)(Char.GetNumericValue(currentNum[j]));
+                    }
+                    else
+                    {
+                        sum -= (int)(Char.GetNumericValue(currentNum[j]));
+                    }
+                }
+
+                if (sum > 0)
+                {
+                    d = i + " ";
+
+                }
+            }
+
+            return d;
+
+        }
+
+        public static string IsSameDigit(int a, int b)
+        {
+            /// <summary>
+            /// Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры.
+            /// Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
+            /// </summary>
+
+            string FLAG = "НЕТ";
+
+            do
+            {
+                int digitA = a % 10;
+                int tempB = b;
+                
+                do
+                {
+                    if (tempB % 10 == digitA)
+                    {
+                        FLAG = "ДА";
+                    }
+
+                    tempB = tempB / 10;
+
+                } 
+                while (tempB != 0);
+
+                a = a / 10;
+
+            } 
+            while (a != 0);
+
+            return FLAG;
+        }
 
 
-        //    for (int i = 1; i <= a; i++)
-        //    {
-        //        currentNum = Convert.ToString(i);
-        //        sum = 0;
-        //        for (int j = 0; j < currentNum.Length; j++)
-        //        {
-        //            if ((int)(Char.GetNumericValue(currentNum[j])) % 2 == 0)
-        //            {
-        //                sum += (int)(Char.GetNumericValue(currentNum[j]));
-        //            }
-        //            else
-        //            {
-        //                sum -= (int)(Char.GetNumericValue(currentNum[j]));
-        //            }
-        //        }
-        //        if (sum > 0)
-        //        {
-        //            Console.Write(i + " ");
-                  
-        //        }
-        //    }
-
-
-
-        //}
-
-    //    public static string IsSameDigit(int a, int b)
-    //    {
-    //        /// <summary>
-    //        /// Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры.
-    //        /// Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
-    //        /// </summary>
-
-    //        int digitA, tempB;
-    //        bool FLAG = false;
-
-    //        if ((a != 0) && (b != 0))
-    //        {
-    //            while ((a / 10 > 0) || (a % 10 != 0))
-    //            {
-    //                digitA = a % 10;
-    //                tempB = b;
-    //                while ((tempB / 10 > 0) || (tempB % 10 != 0))
-    //                {
-    //                    if (tempB % 10 == digitA)
-    //                    {
-    //                        FLAG = true;
-    //                        return "ДА";
-    //                        break;
-    //                    }
-    //                    tempB /= 10;
-    //                }
-    //                if (FLAG) break;
-    //                a /= 10;
-    //            }
-    //            if (!FLAG) return "НЕТ";
-    //        }
-    //        else if (a != b)
-    //        {
-    //            tempB = a + b;
-    //            while ((tempB / 10 > 0) || (tempB % 10 != 0))
-    //            {
-    //                if (tempB % 10 == 0)
-    //                {
-    //                    FLAG = true;
-    //                    return "ДА";
-    //                    break;
-    //                }
-    //                tempB /= 10;
-    //            }
-    //            if (!FLAG) return "НЕТ";
-    //        }
-    //        else
-    //        {
-    //            return "ДА";
-    //        }
-
-    //    }
-    //}
 
 
     }
 }
+

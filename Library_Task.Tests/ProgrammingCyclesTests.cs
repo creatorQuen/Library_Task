@@ -107,6 +107,50 @@ namespace Library_Task.Tests
         }
 
 
+        [TestCase(-54, 1)]
+        [TestCase(0, 0)]
+        [TestCase(1, 1)]
+        [TestCase(11, 2)]
+        [TestCase(11003489, 4)]
+        public void FindOddDigitsOfNumberTests(int a, int expected)
+        {
+            int actual = ProgrammingCycles.FindOddDigitsOfNumber(a);
 
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestCase(123, "321")]
+        [TestCase(568210, "012865")]
+        [TestCase(0, "0")]
+        [TestCase(151, "151")]
+        [TestCase(88, "88")]
+        public void GetReverseNumberTests(int a, string expected)
+        {
+            string actual = ProgrammingCycles.GetReverseNumber(a);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestCase(12, "8")]
+        public void SumOfEvenDigitsIsGreaterThanSumOfOddTests(int a, string expected)
+        {
+            string actual = ProgrammingCycles.SumOfEvenDigitsIsGreaterThanSumOfOdd(a);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestCase(123, 3456789, "ДА")]
+        [TestCase(500, 99, "НЕТ")]
+        [TestCase(0, 0, "ДА")]
+        public void IsSameDigitTests(int a, int b, string expected)
+        {
+            string actual = ProgrammingCycles.IsSameDigit(a, b);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
