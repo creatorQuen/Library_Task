@@ -8,14 +8,15 @@ namespace Library_Task
         {
             //var arr = ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(-40);
 
-            //var arr = ProgrammingCycles.FindThirdRoot(27);
+            int[] temp = new int[] { 2123, 2, 17, 445, 5 };
+            var arr = Arrays.SortArrayBubble(temp);
 
             //Console.WriteLine(arr);
 
-            //for(int i = 0; i < arr.Length; i++)
-            //{
-            //    Console.Write($", {arr[i]}");
-            //}
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"{arr[i]} ");
+            }
 
 
             //Console.Write("Введите число N: ");
@@ -44,9 +45,7 @@ namespace Library_Task
             //}
 
 
-            var n = ProgrammingCycles.IsSameDigit(20, 21);
 
-            Console.WriteLine(n);
         }
     }
 }

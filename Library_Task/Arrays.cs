@@ -179,14 +179,91 @@ namespace Library_Task
             return arrayTmp;
         }
 
-        //public static int[] SortArrayBubble(int[] arr)
-        //{
-        //    /// <summary>
-        //    /// Отсортировать массив по возрастанию одним из способов:  
-        //    /// пузырьком(Bubble), выбором (Select) или вставками (Insert)
-        //    /// </summary>
+        public static int[] SortArrayBubbleUp(int[] arr)
+        {
+            /// <summary>
+            /// Отсортировать массив по возрастанию сортировкой пузырьком(Bubble).
+            /// </summary>
+
+            for (int j = arr.Length - 1; j > 0; j--)
+            {
+                for (int i = 0; i < j; i++)
+                {
+                    if (arr[i] > arr[i + 1])
+                    {
+                        int tmp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = tmp;
+                    }
+                }
+            }
+
+            return arr;
 
 
-        //}
+            //// Пузырьком по убыванию.
+            //for (int j = 0; j < arr.Length; j++)
+            //{
+            //    for (int i = 0; i < arr.Length - 1; i++)
+            //    {
+            //        if (arr[i] < arr[i + 1])
+            //        {
+            //            int tmp = arr[i];
+            //            arr[i] = arr[i + 1];
+            //            arr[i + 1] = tmp;
+            //        }
+            //    }
+            //} 
+
+            //return arr;
+        }
+
+        public static int[] SortArraySelectDown(int[] arr)
+        {
+            /// <summary>
+            /// Отсортировать массив по убыванию сортировкой выбором (Select).
+            /// </summary>
+
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                int indexOfMax = i;
+
+                for (int j = i; j < arr.Length; j++)
+                {
+                    if (arr[indexOfMax] < arr[j])
+                    {
+                        indexOfMax = j;
+                    }
+                }
+
+                int tmp = arr[i];
+                arr[i] = arr[indexOfMax];
+                arr[indexOfMax] = tmp;
+            }
+
+            return arr;
+
+
+            // Выбором по возрастанию
+            //for (int i = 0; i < arr.Length - 1; i++)
+            //{
+            //    int indexOfMin = i;
+
+            //    for (int j = i + 1; j < arr.Length; j++)
+            //    {
+            //        if (arr[j] < arr[indexOfMin])
+            //        {
+            //            indexOfMin = j;
+            //        }
+            //    }
+
+            //    int tmp = arr[i];
+            //    arr[i] = arr[indexOfMin];
+            //    arr[indexOfMin] = tmp;
+            //}
+            //return arr;
+        }
+
+
     }
 }
