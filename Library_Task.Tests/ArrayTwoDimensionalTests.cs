@@ -26,6 +26,70 @@ namespace Library_Task.Tests
         }
 
 
+        [TestCase(1, 65)]
+        [TestCase(2, 2)]
+        [TestCase(3, 17)]
+        public void FindMaximumElementOfArray2DTests(int mockNumber, int expected)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            int actual = ArrayTwoDimensional.FindMaximumElementOfArray2D(arr);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(4)]
+        public void FindMaximumElementOfArray2D_EmptyArray__ShouldArgumentException(int mockNumber)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            Assert.Throws<ArgumentException>(() => ArrayTwoDimensional.FindMaximumElementOfArray2D(arr));
+        }
+
+
+        [TestCase(1, new int[] { 1, 3 })]
+        [TestCase(2, new int[] { 1, 4 })]
+        [TestCase(3, new int[] { 4, 1 })]
+        public void FindMinimumIndexNumberOfArray2DTests(int mockNumber, int[] expected)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            int[] actual = ArrayTwoDimensional.FindMinimumIndexNumberOfArray2D(arr);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(4)]
+        public void FindMinimumIndexNumberOfArray2D_EmptyArray__ShouldArgumentException(int mockNumber)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            Assert.Throws<ArgumentException>(() => ArrayTwoDimensional.FindMinimumIndexNumberOfArray2D(arr));
+        }
+
+
+        [TestCase(1, new int[] { 4, 1 })]
+        [TestCase(2, new int[] { 3, 1 })]
+        [TestCase(3, new int[] { 1, 1 })]
+        public void FindMaximumIndexNumberOfArray2DTests(int mockNumber, int[] expected)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            int[] actual = ArrayTwoDimensional.FindMaximumIndexNumberOfArray2D(arr);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(4)]
+        public void FindMaximumIndexNumberOfArray2D_EmptyArray__ShouldArgumentException(int mockNumber)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            Assert.Throws<ArgumentException>(() => ArrayTwoDimensional.FindMaximumIndexNumberOfArray2D(arr));
+        }
+
+
+
 
         public static class DoubleArraysMock
         {

@@ -60,7 +60,7 @@ namespace Library_Task
             return maximum;
         }
 
-        public static int[] FindMInimumIndexNumberOfArray2D(int[,] arr)
+        public static int[] FindMinimumIndexNumberOfArray2D(int[,] arr)
         {
             /// <summary>
             /// Найти индекс минимального элемента массива.
