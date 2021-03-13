@@ -36,6 +36,11 @@ namespace Library_Task
             /// Найти максимальный элемент массива.
             /// </summary>
 
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
+
             int maximum = arr[0];
 
             for (int i = 1; i < arr.Length; i++)
@@ -54,6 +59,11 @@ namespace Library_Task
             /// <summary>
             /// Найти индекс минимального элемента массива.
             /// </summary>
+
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
 
             int numberIndex = 0;
 
@@ -74,6 +84,11 @@ namespace Library_Task
             /// Найти индекс максимального элемента массива.
             /// </summary>
 
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
+
             int numberIndex = 0;
 
             for (int i = 1; i < arr.Length; i++)
@@ -93,6 +108,11 @@ namespace Library_Task
             /// Посчитать сумму элементов массива с нечетными индексами.
             /// </summary>
 
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
+
             int sum = 0;
 
             for (int i = 0; i < arr.Length; i++)
@@ -111,6 +131,11 @@ namespace Library_Task
             /// <summary>
             /// Сделать реверс массива (массив в обратном направлении).
             /// </summary>
+
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
 
             int[] arrayTmp = new int[arr.Length];
 
@@ -137,6 +162,11 @@ namespace Library_Task
             /// Посчитать количество нечетных элементов массива.
             /// </summary>
 
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
+
             int count = 0;
 
             for (int i = 0; i < arr.Length; i++)
@@ -156,6 +186,11 @@ namespace Library_Task
             /// Поменять местами первую и вторую половину массива,
             /// например, для массива 1 2 3 4, результат 3 4 1 2,  или для 12345 - 45312.
             /// </summary>
+
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
 
             int[] arrayTmp = new int[arr.Length];
 
@@ -189,6 +224,11 @@ namespace Library_Task
             /// <summary>
             /// Отсортировать массив по возрастанию сортировкой пузырьком(Bubble).
             /// </summary>
+
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
 
             for (int j = arr.Length - 1; j > 0; j--)
             {
@@ -228,6 +268,11 @@ namespace Library_Task
             /// <summary>
             /// Отсортировать массив по убыванию сортировкой выбором (Select).
             /// </summary>
+
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
 
             for (int i = 0; i < arr.Length - 1; i++)
             {
