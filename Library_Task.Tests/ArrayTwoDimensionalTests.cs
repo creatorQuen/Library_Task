@@ -89,6 +89,49 @@ namespace Library_Task.Tests
         }
 
 
+        [TestCase(1, 2)]
+        [TestCase(2, 4)]
+        [TestCase(3, 4)]
+        public void CountNumberOfElementsGreaterAllNeighborsTests(int mockNumber, int expected)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            int actual = ArrayTwoDimensional.CountNumberOfElementsGreaterAllNeighbors(arr);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(4)]
+        public void CountNumberOfElementsGreaterAllNeighbors_EmptyArray__ShouldArgumentException(int mockNumber)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            Assert.Throws<ArgumentException>(() => ArrayTwoDimensional.CountNumberOfElementsGreaterAllNeighbors(arr));
+        }
+
+
+        [TestCase(1, 1)]
+        [TestCase(2, 2)]
+        [TestCase(3, 3)]
+        public void GetReverseArray2DTests(int mockNumber, int expectedMockNumber)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            int[,] expected = DoubleArraysMock.GetExpectedMock(expectedMockNumber);
+
+            int[,] actual = ArrayTwoDimensional.GetReverseArray2D(arr);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(4)]
+        public void GetReverseArray2D_EmptyArray__ShouldArgumentException(int mockNumber)
+        {
+            int[,] arr = DoubleArraysMock.GetMock(mockNumber);
+
+            Assert.Throws<ArgumentException>(() => ArrayTwoDimensional.GetReverseArray2D(arr));
+        }
+
 
 
         public static class DoubleArraysMock
@@ -123,15 +166,51 @@ namespace Library_Task.Tests
                             {1, 2, 3, 0},
                             {8, 0, -1, 0},
                             {-5, -4, 11,0},
-                            {0, 0, 0, 0},
                         };
                         break;
                     case 4:
-                        result = new int[,] { { },{ }};
+                        result = new int[,] { { }, { } };
                         break;
                 }
 
                 return result;
+            }
+
+            public static int[,] GetExpectedMock(int numberExpected)
+            {
+                int[,] resultEx = new int[0, 0];
+                switch (numberExpected)
+                {
+                    case 1:
+                        resultEx = new int[,]
+                        {
+                            {0,     1,   8,  65, 11},
+                            {17,  -65,  -1,  -4, -4},
+                            {-65, -65,  -1,   11, 11},
+                            {-65,   -65,  0,   11, 11}
+                        };
+                        break;
+                    case 2:
+                        resultEx = new int[,]
+                        {
+                            {0, 0, 2,},
+                            {0, 1, -1},
+                            {1, -1, -1},
+                            {-1, 1, 2},
+                        };
+                        break;
+                    case 3:
+                        resultEx = new int[,]
+                        {
+                            {17, 1,  8, -5},
+                            {1,  2,  0,  -4},
+                            {11,  3, -1,  11},
+                            {0, 0, 0, 0},
+                        };
+                        break;
+                }
+
+                return resultEx;
             }
         }
     }
