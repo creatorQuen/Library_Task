@@ -28,6 +28,26 @@ namespace Library_Task
         }
 
 
+        public static int[,] GetReverseArray2D(int[,] arr)
+        {
+            /// <summary>
+            /// Отразите массив относительно его главной диагонали.
+            /// </summary>
+
+            int[,] tempArr = new int[arr.GetLength(1), arr.GetLength(0)];
+
+            for (int i = 0; i < tempArr.GetLength(0); i++)
+            {
+                for (int j = 0; j < tempArr.GetLength(1); j++)
+                {
+                    tempArr[i, j] = arr[j, i];
+
+                }
+
+            }
+
+            return tempArr;
+        }
 
     }
 }

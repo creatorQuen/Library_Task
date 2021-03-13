@@ -8,41 +8,30 @@ namespace Library_Task
         {
             //var arr = ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(-40);
 
-            int[] temp = new int[] { 2123, 2, 17, 445, 5 };
-            var arr = Arrays.SortArrayBubble(temp);
+            //int[] temp = new int[] { 2123, 2, 17, 445, 5, -65 };
+            int[,] temp = new int[,]   {{1, 2, 4, 5 },
+                                        { 7, 0, 9 ,4},
+                                        { 5, 67, 7, -1},
+                                        { 567, 34, 123, 68}
+                                        };
+            var arr = ArrayTwoDimensional.GetReverseArray2D(temp);
 
-            //Console.WriteLine(arr);
+            // Console.WriteLine(arr);
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write($"{arr[i]} ");
-            }
-
-
-            //Console.Write("Введите число N: ");
-            //var N = Convert.ToInt32(Console.ReadLine());
-            //string currentNum;
-            //int sum;
-            //for (int i = 1; i <= N; i++)
+            //for (int i = 0; i < arr.Length; i++)
             //{
-            //    currentNum = Convert.ToString(i);
-            //    sum = 0;
-            //    for (int j = 0; j < currentNum.Length; j++)
-            //    {
-            //        if ((int)(Char.GetNumericValue(currentNum[j])) % 2 == 0)
-            //        {
-            //            sum += (int)(Char.GetNumericValue(currentNum[j]));
-            //        }
-            //        else
-            //        {
-            //            sum -= (int)(Char.GetNumericValue(currentNum[j]));
-            //        }
-            //    }
-            //    if (sum > 0)
-            //    {
-            //        Console.Write(i + " ");
-            //    }
+            //    Console.Write($"{arr[i]} ");
             //}
+
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write($"{arr[i, j]} ");
+                }
+                Console.WriteLine("");   
+            }
 
 
 

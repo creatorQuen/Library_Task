@@ -12,6 +12,11 @@ namespace Library_Task
             /// Найти минимальный элемент массива.
             /// </summary>
 
+            if (arr.Length == 0)
+            {
+                throw new Exception("Пустой массив.");
+            }
+
             int minimum = arr[0];
 
             for (int i = 1; i < arr.Length; i++)
