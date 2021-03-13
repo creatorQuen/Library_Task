@@ -14,7 +14,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int minimum = arr[0];
@@ -38,7 +38,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int maximum = arr[0];
@@ -62,7 +62,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int numberIndex = 0;
@@ -86,7 +86,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int numberIndex = 0;
@@ -110,7 +110,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int sum = 0;
@@ -134,7 +134,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int[] arrayTmp = new int[arr.Length];
@@ -164,7 +164,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int count = 0;
@@ -189,7 +189,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int[] arrayTmp = new int[arr.Length];
@@ -227,7 +227,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             for (int j = arr.Length - 1; j > 0; j--)
@@ -271,7 +271,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             for (int i = 0; i < arr.Length - 1; i++)

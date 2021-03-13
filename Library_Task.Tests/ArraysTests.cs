@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace Library_Task.Tests
 {
@@ -15,6 +16,12 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(new int[0])]
+        public void FindMinimumNumberInArray_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.FindMinimumNumberInArray(arr));
+        }
+
 
         [TestCase(new int[] { -7, -28, 100, 1, 0, 25, 2 }, 100)]
         [TestCase(new int[] { 0 }, 0)]
@@ -25,6 +32,12 @@ namespace Library_Task.Tests
             int actual = Arrays.FindMaximumNumberInArray(arr);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[0])]
+        public void FindMaximumNumberInArray_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.FindMaximumNumberInArray(arr));
         }
 
 
@@ -39,6 +52,12 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(new int[0])]
+        public void FindIndexOfMinimumNumberInArray_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.FindIndexOfMinimumNumberInArray(arr));
+        }
+
 
         [TestCase(new int[] { -7, -28, 100, 1, 0, 25, 2 }, 2)]
         [TestCase(new int[] { 0 }, 0)]
@@ -49,6 +68,12 @@ namespace Library_Task.Tests
             int actual = Arrays.FindIndexOfMaximumNumberInArray(arr);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[0])]
+        public void FindIndexOfMaximumNumberInArray_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.FindIndexOfMaximumNumberInArray(arr));
         }
 
 
@@ -63,6 +88,12 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(new int[0])]
+        public void SumArrayElementsWithOddIndex_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.SumArrayElementsWithOddIndex(arr));
+        }
+
 
         [TestCase(new int[] { -7, -28, 100, 1, 0, 25, 2 }, new int[] { 2, 25, 0, 1, 100, -28, -7 })]
         [TestCase(new int[] { 0 }, new int[] { 0 })]
@@ -73,6 +104,12 @@ namespace Library_Task.Tests
             int[] actual = Arrays.GetArrayReverse(arr);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[0])]
+        public void GetArrayReverse_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.GetArrayReverse(arr));
         }
 
 
@@ -87,6 +124,12 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(new int[0])]
+        public void SumNumberOddArrayElements_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.SumNumberOddArrayElements(arr));
+        }
+
 
         [TestCase(new int[] { -7, -28, 100, 1, 0, 25, 2 }, new int[] { 0, 25, 2, 1, -7, -28, 100 })]
         [TestCase(new int[] { 0 }, new int[] { 0 })]
@@ -97,6 +140,12 @@ namespace Library_Task.Tests
             int[] actual = Arrays.GetArrayChangeHalfNumber(arr);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[0])]
+        public void GetArrayChangeHalfNumber_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.GetArrayChangeHalfNumber(arr));
         }
 
 
@@ -111,6 +160,13 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(new int[0])]
+        public void SortArrayBubbleUp_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.SortArrayBubbleUp(arr));
+        }
+
+
 
         [TestCase(new int[] { -7, -28, 100, 1, 0, 25, 2 }, new int[] { 100, 25, 2, 1, 0, -7, -28 })]
         [TestCase(new int[] { 0 }, new int[] { 0 })]
@@ -122,5 +178,13 @@ namespace Library_Task.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(new int[0])]
+        public void SortArraySelectDown_EmptyArray__ShouldArgumentException(int[] arr)
+        {
+            Assert.Throws<ArgumentException>(() => Arrays.SortArraySelectDown(arr));
+        }
+
+
     }
 }
