@@ -14,7 +14,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int minimum = arr[0, 0];
@@ -41,7 +41,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int maximum = arr[0, 0];
@@ -68,7 +68,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int minIndexI = 0;
@@ -97,7 +97,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int maxIndexI = 0;
@@ -126,7 +126,7 @@ namespace Library_Task
 
             if (arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int counter = 0;
@@ -148,7 +148,6 @@ namespace Library_Task
             return counter;
         }
 
-
         public static int[,] GetReverseArray2D(int[,] arr)
         {
             /// <summary>
@@ -157,7 +156,7 @@ namespace Library_Task
 
             if(arr.Length == 0)
             {
-                throw new Exception("Пустой массив.");
+                throw new ArgumentException("Пустой массив.");
             }
 
             int[,] tempArr = new int[arr.GetLength(1), arr.GetLength(0)];
