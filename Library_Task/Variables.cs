@@ -10,7 +10,7 @@ namespace Library_Task
         {
             if (firstNumber == secondNumber)
             {
-                throw new Exception("Число А не может быть равно B");
+                throw new ArgumentException("Число А не может быть равно B");
             }
             else
             {
@@ -19,22 +19,18 @@ namespace Library_Task
             }
         }
 
-        public static (string firstOut, string secondOut) ChangeVariables(string firstInput, string secondInput)
-        {
-            var changer = (firtsOut: "", secondOut: "");
+        //// Другой вариант второй задачи - решение через передачи значения по ссылки.
+        //public static (string firstOut, string secondOut) ChangeVariables(string firstInput, string secondInput)
+        //{
+        //    var changer = (firtsOut: "", secondOut: "");
 
-            //string changer;
-            //changer = firstInput;
-            //firstInput = secondInput;
-            //secondInput = changer;
+        //    changer.firtsOut = secondInput;
+        //    changer.secondOut = firstInput;
+        //    return changer;
+        //}
 
-            changer.firtsOut = secondInput;
-            changer.secondOut = firstInput;
-            return changer;
-        }
 
-        // Другой вариант второй задачи - решение через передачи значения по ссылки.
-        public static void ChangeVariables1(ref string firstInput, ref string secondInput)
+        public static void ChangeVariables(ref string firstInput, ref string secondInput)
         {
             string temp = firstInput;
             firstInput = secondInput;
@@ -46,7 +42,7 @@ namespace Library_Task
 
             if (secondNumber == 0)
             {
-                throw new Exception("При делении в знаменателе ноль.");
+                throw new ArgumentException("Второе число не может быть нулем.");
             }
 
             int[] result = new int[2];
@@ -60,7 +56,7 @@ namespace Library_Task
         {
             if (firstNumber == 0)
             {
-                throw new Exception("Первый коэфициент (А) линейного уравнения не должно быть 0.");
+                throw new ArgumentException("Первый коэфициент (А) линейного уравнения не должно быть 0.");
             }
 
             double result = (thirdNumber - secondNumber) / firstNumber;
@@ -72,7 +68,7 @@ namespace Library_Task
         {
             if (a == c)
             {
-                throw new Exception("Число X1 и Y1 не должны быть равны.");
+                throw new ArgumentException("Числа a и c не должны быть равны.");
             }
 
             var k = (b - d) / (a - c);
