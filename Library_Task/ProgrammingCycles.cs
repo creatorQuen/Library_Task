@@ -388,7 +388,7 @@ namespace Library_Task
 
                 if (sum > 0)
                 {
-                    d = i + " ";
+                    d = i + "";
 
                 }
             }

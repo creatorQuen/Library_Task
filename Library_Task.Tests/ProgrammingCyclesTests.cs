@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace Library_Task.Tests
 {
@@ -18,9 +19,6 @@ namespace Library_Task.Tests
         }
 
 
-        [TestCase(1000, new int[1] { 0 })]
-        [TestCase(0, new int[1] { 0 })]
-        [TestCase(-22, new int[1] { 0 })]
         [TestCase(250, new int[] { 250, 500, 750, 1000 })]
         [TestCase(40, new int[] { 40, 80, 120, 160, 200, 240, 280, 320, 360, 400, 440, 480, 520, 560, 600, 640, 680, 720, 760, 800, 840, 880, 920, 960, 1000 })]
         public void GetNumberOfDivisionTests(int a, int[] expected)
@@ -28,6 +26,13 @@ namespace Library_Task.Tests
             int[] actual = ProgrammingCycles.GetNumberOfDivision(a);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(1001)]
+        [TestCase(-1)]
+        public void GetNumberOfDivision_ALarge1000orLess1_ShouldException(int a)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.GetNumberOfDivision(a));
         }
 
 
@@ -41,14 +46,18 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0)]
+        [TestCase(-25)]
+        public void GetNumberOfPositiveIntegersWhoseSquareIsLess_ALess0OrNegativeNumber_ShouldException(int a)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.GetNumberOfPositiveIntegersWhoseSquareIsLess(a));
+        }
 
 
         [TestCase(8, 4)]
         [TestCase(-8, -4)]
         [TestCase(15, 5)]
         [TestCase(17, 1)]
-        [TestCase(1, 1)] // "ОШИбКА"
-        [TestCase(0, 0)] // "ОШИбКА"
         public void GreatestСommonDivisorTests(int a, int expected)
         {
             int actual = ProgrammingCycles.GreatestСommonDivisor(a);
@@ -56,12 +65,17 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0)]
+        public void GreatestСommonDivisor_AEqualOneOrZero_ShouldException(int a)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.GreatestСommonDivisor(a));
+        }
+
 
         [TestCase(49, 0, 196)]
         [TestCase(0, 0, 0)]
         [TestCase(1, 18, 21)]
         [TestCase(-7, 7, 0)]
-        [TestCase(1, 1, 0)] // "ОШИбКА"
         public void SumOfDivisionOnSevenTests(int a, int b, int expected)
         {
             int actual = ProgrammingCycles.SumOfDivisionOnSeven(a, b);
@@ -69,8 +83,13 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(27,27)]
+        public void SumOfDivisionOnSeven_AandBSomeAndNotDivide7_ShouldException(int a, int b)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.SumOfDivisionOnSeven(a, b));
+        }
 
-        [TestCase(-1, 0)]  // "ОШИбКА"
+
         [TestCase(1, 1)]
         [TestCase(2, 1)]
         [TestCase(3, 2)]
@@ -82,12 +101,17 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0)]
+        public void GetNumberFibonacci_ALessOne_ShouldException(int a)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.GetNumberFibonacci(a));
+        }
+
 
         [TestCase(6, 8, 2)]
         [TestCase(12, 2, 2)]
         [TestCase(100, 6, 2)]
         [TestCase(-100, -25, -25)]
-        [TestCase(0, 0, 0)]
         public void FindGreatestCommonDivisorTests(int a, int b, int expected)
         {
             int actual = ProgrammingCycles.FindGreatestCommonDivisor(a, b);
@@ -95,15 +119,26 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0, 7)]
+        public void FindGreatestCommonDivisor_AorBEqualZero_ShouldException(int a, int b)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.FindGreatestCommonDivisor(a, b));
+        }
+
 
         [TestCase(27, 3)]
         [TestCase(8, 2)]
-        [TestCase(-125, -5)] // "Число должно быть положительным."
         public void FindThirdRootTests(int a, int expected)
         {
             int actual = ProgrammingCycles.FindThirdRoot(a);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(-125)]
+        public void FindThirdRoot_AorBEqualZero_ShouldException(int a)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.FindThirdRoot(a));
         }
 
 
@@ -133,7 +168,7 @@ namespace Library_Task.Tests
         }
 
 
-        [TestCase(12, "8")]
+        [TestCase(12, "12")]
         public void SumOfEvenDigitsIsGreaterThanSumOfOddTests(int a, string expected)
         {
             string actual = ProgrammingCycles.SumOfEvenDigitsIsGreaterThanSumOfOdd(a);
@@ -141,6 +176,11 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0)]
+        public void SumOfEvenDigitsIsGreaterThanSumOfOdd_AEqualZero_ShouldException(int a)
+        {
+            Assert.Throws<Exception>(() => ProgrammingCycles.SumOfEvenDigitsIsGreaterThanSumOfOdd(a));
+        } 
 
 
         [TestCase(123, 3456789, "ДА")]

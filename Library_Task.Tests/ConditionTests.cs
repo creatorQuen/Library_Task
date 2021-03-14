@@ -37,7 +37,7 @@ namespace Library_Task.Tests
 
         [TestCase(0, 0)]
         [TestCase(0, 1)]
-        public void GetQuarterPointArea_PointOnXorY_ShouldArgumentException(double x, double y)
+        public void GetQuarterPointArea_PointOnXorY_ShouldException(double x, double y)
         {
             Assert.Throws<Exception> (() => Conditions.GetQuarterPointArea(x, y));
         }
@@ -65,7 +65,7 @@ namespace Library_Task.Tests
         }
 
         [TestCase(0, 1, 2)]
-        public void SolveQuadraticEquation_AEqualZero_ShouldArgumentException(double a, double b, double c)
+        public void SolveQuadraticEquation_AEqualZero_ShouldException(double a, double b, double c)
         {
             Assert.Throws<Exception>(() => Conditions.SolveQuadraticEquation(a, b, c));
         }
@@ -83,7 +83,7 @@ namespace Library_Task.Tests
         }
 
         [TestCase(100)]
-        public void GetUpperCaseTwoDigitNumber_AEqualZero_ShouldArgumentException(int number)
+        public void GetUpperCaseTwoDigitNumber_NumberIsNotTwoDigits_ShouldException(int number)
         {
             Assert.Throws<Exception>(() => Conditions.GetUpperCaseTwoDigitNumber(number));
         }
