@@ -8,6 +8,11 @@ namespace Library_Task
     {
         public static double SolveAddMultiplySubtruct(int a, int b)
         {
+            //if((a == null) || (b == null))
+            //{
+            //    throw new ArgumentNullException("Не введены данные.");
+            //}
+
             if (a > b)
             {
                 return a + b;

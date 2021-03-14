@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace Library_Task.Tests
 {
@@ -15,12 +16,14 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual, 0.1);
         }
 
+        //[TestCase(null, -44)]
+        //[TestCase(78, null)]
+        //public void SolveAddMultiplySubtruct_AorBequalNull_ShouldArgumentException(int a, int b)
+        //{
+        //    Assert.Throws<ArgumentNullException>(() => Conditions.SolveAddMultiplySubtruct(a, b));
+        //}
 
-        [TestCase(0, 0, 0)]
-        [TestCase(0, 1.2, 0)]
-        [TestCase(56.8, 0, 0)]
-        [TestCase(0, -9, 0)]
-        [TestCase(-12.2, 0, 0)]
+
         [TestCase(1.9, 1.3, 1)]
         [TestCase(-1.2, 23.5, 2)]
         [TestCase(-1, -2, 3)]
@@ -30,6 +33,13 @@ namespace Library_Task.Tests
             int actual = Conditions.GetQuarterPointArea(x, y);
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(0, 0)]
+        [TestCase(0, 1)]
+        public void GetQuarterPointArea_PointOnXorY_ShouldArgumentException(double x, double y)
+        {
+            Assert.Throws<Exception> (() => Conditions.GetQuarterPointArea(x, y));
         }
 
 
@@ -45,7 +55,6 @@ namespace Library_Task.Tests
         }
 
 
-        [TestCase(0, 0, 0, new double[] {0})]
         [TestCase(4, -20, 25, new double[] {2.5})]
         [TestCase(-1, -2, 15, new double[] {-5, 3})]
         public void SolveQuadraticEquationTests(double a, double b, double c, double[] expected)
@@ -55,13 +64,17 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(0, 1, 2)]
+        public void SolveQuadraticEquation_AEqualZero_ShouldArgumentException(double a, double b, double c)
+        {
+            Assert.Throws<Exception>(() => Conditions.SolveQuadraticEquation(a, b, c));
+        }
+
 
         [TestCase(20, "двадцать")]
         [TestCase(10, "десять")]
         [TestCase(33, "тридцать три")]
         [TestCase(99, "девяносто девять")]
-        [TestCase(100, "Число не двузначное")]
-        [TestCase(-1, "Число не двузначное")]
         public void GetUpperCaseTwoDigitNumber(int number, string expected)
         {
             string actual = Conditions.GetUpperCaseTwoDigitNumber(number);
@@ -69,5 +82,10 @@ namespace Library_Task.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(100)]
+        public void GetUpperCaseTwoDigitNumber_AEqualZero_ShouldArgumentException(int number)
+        {
+            Assert.Throws<Exception>(() => Conditions.GetUpperCaseTwoDigitNumber(number));
+        }
     }
 }
